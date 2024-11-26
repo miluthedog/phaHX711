@@ -1,8 +1,9 @@
+// no comment version for Python stuff
 #include <phaHX711.h>
 
 const byte doutPin = 2;
 const byte sckPin = 3;
-double weight = 100; // gram
+double weight = 100;
 
 phaHX711 hx711;
 long result;
@@ -21,8 +22,6 @@ void setup() {
 
 void loop() {
   result = hx711.scale();
-  Serial.print("Result: ");
-  Serial.print(result);
-  Serial.println(" g");
+  Serial.println(result);
   delay(1000);
 }

@@ -12,8 +12,7 @@ void setup() {
 }
 
 void loop() {
-  data = hx711.read();
-  Serial.print("Result: ");
-  Serial.println(data);
+  result = hx711.read();
+  Serial.println(result);
   delay(1000);
 }
