@@ -1,5 +1,6 @@
 # Loadcell
 ### HX711
-Download .zip and remove all .py files
-### Python stuff
-Just copy it
+Download .zip file
+Let ArduinoIDE set up for you
+### Python code
+Just take it
