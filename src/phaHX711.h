@@ -21,7 +21,7 @@ class phaHX711
     
     long calAvg();
     void tare();
-    void factor(double weight);
+    double factor(double weight);
     long scale();
 };
 

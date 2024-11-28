@@ -4,12 +4,12 @@ const byte doutPin = 2;
 const byte sckPin = 3;
 double weight = 100; // gram
 
-phaHX711 hx711;
-long result;
+phaHX711 hx711(doutPin, sckPin);
+double result;
 
 void setup() {
   Serial.begin(9600);
-  hx711.setPin(doutPin, sckPin);
+  hx711.setPin();
 
   Serial.println("Remove weight");
   delay(1000);
@@ -17,6 +17,7 @@ void setup() {
   Serial.println("Put weight");
   delay(1000);
   hx711.factor(weight);
+  Serial.println(factorValue);
 }
 
 void loop() {
