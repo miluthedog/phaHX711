@@ -16,7 +16,7 @@ class phaHX711
     phaHX711();
     virtual ~phaHX711();
 
-    bool setPin(byte doutPin, byte sckPin);
+    bool setPin();
     long read();
     
     long calAvg();
