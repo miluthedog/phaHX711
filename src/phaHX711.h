@@ -9,8 +9,8 @@ class phaHX711
 
     byte serialClock;
     byte dataOut;
-    long tareValue = 0;
-    double factorValue = 1;
+    long manualTare = 0;
+    double manualFactor = 1;
 
   public:
     phaHX711(byte doutPin, byte sckPin);
@@ -22,7 +22,8 @@ class phaHX711
     long calAvg();
     void tare();
     double factor(double weight);
-    double scale();
+    double autoScale(double factor);
+    double manualScale();
 };
 
 #endif

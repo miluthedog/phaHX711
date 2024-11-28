@@ -22,7 +22,9 @@ void setup() {
 }
 
 void loop() {
-  result = hx711.scale();
+  result = hx711.manualScale();
+  Serial.print("Result: ");
   Serial.print(result);
+  Serial.println(" g");
   delay(1000);
 }

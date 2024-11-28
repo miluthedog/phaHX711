@@ -46,16 +46,21 @@ long phaHX711::calAvg() {
 }
 
 void phaHX711::tare() {
-  tareValue = calAvg();
+  manualTare = calAvg();
 }
 
 double phaHX711::factor(double weight) {
-  factorValue = (calAvg() - tareValue) / weight;
-  return factorValue;
+  manualFactor = (calAvg() - manualTare) / weight;
+  return manualFactor;
 }
 
 // output
-double phaHX711::scale() {
-  return (read() - tareValue) / factorValue;
+double phaHX711::autoScale(double factor) {
+  return (read() - manualTare) / factor;
 }
+
+double phaHX711::manualScale() {
+  return (read() - manualTare) / manualFactor;
+}
+
 
