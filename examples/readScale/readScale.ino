@@ -5,6 +5,7 @@ const byte sckPin = 3;
 double weight = 100; // gram
 
 phaHX711 hx711(doutPin, sckPin);
+double factor;
 double result;
 
 void setup() {
@@ -16,8 +17,8 @@ void setup() {
   hx711.tare();
   Serial.println("Put weight");
   delay(1000);
-  hx711.factor(weight);
-  Serial.println(factorValue);
+  factor = hx711.factor(weight);
+  Serial.println(factor);
 }
 
 void loop() {
