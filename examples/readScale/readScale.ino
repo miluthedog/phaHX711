@@ -13,10 +13,10 @@ void setup() {
   hx711.setPin();
 
   Serial.println("Remove weight");
-  delay(1000);
+  delay(2000);
   hx711.tare();
   Serial.println("Put weight");
-  delay(1000);
+  delay(2000);
   factor = hx711.factor(weight);
   Serial.println(factor);
 }
