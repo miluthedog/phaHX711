@@ -40,7 +40,7 @@ long phaHX711::calAvg() {
   long sum = 0;
 
 	for (byte i = 0; i < loopTimes; i++) {
-		sum += read()/100;
+		sum += read();
 	}
   return sum/loopTimes;
 }
@@ -56,6 +56,6 @@ double phaHX711::factor(double weight) {
 
 // output
 double phaHX711::scale() {
-  return (read()/100 - tareValue) / factorValue;
+  return (read() - tareValue) / factorValue;
 }
 
