@@ -13,7 +13,7 @@ class phaHX711
     double factorValue = 1;
 
   public:
-    phaHX711();
+    phaHX711(byte doutPin, byte sckPin);
     virtual ~phaHX711();
 
     bool setPin();
