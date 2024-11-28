@@ -2,7 +2,7 @@
 
 const byte doutPin = 2;
 const byte sckPin = 3;
-double factor = 100; // gram
+double factor = 100; // factor number
 
 phaHX711 hx711(doutPin, sckPin);
 double result;
