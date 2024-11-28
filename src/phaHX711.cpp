@@ -51,7 +51,7 @@ void phaHX711::tare() {
 
 double phaHX711::factor(double weight) {
   factorValue = (calAvg() - tareValue) / weight;
-  return factorValue
+  return factorValue;
 }
 
 // output
