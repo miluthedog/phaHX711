@@ -2,17 +2,16 @@
 #include "phaHX711.h"
 
 // constructor - destructor
-phaHX711::phaHX711() {
+phaHX711::phaHX711(byte doutPin, byte sckPin) {
+  serialClock  = sckPin;
+  dataOut  = doutPin;
 }
 
 phaHX711::~phaHX711() {
 }
 
 // set up
-bool phaHX711::setPin(byte doutPin, byte sckPin) {
-  serialClock  = sckPin;
-  dataOut  = doutPin;
-
+bool phaHX711::setPin() {
   pinMode(serialClock, OUTPUT);
   pinMode(dataOut, INPUT);
 

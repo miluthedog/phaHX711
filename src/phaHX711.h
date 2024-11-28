@@ -9,7 +9,6 @@ class phaHX711
 
     byte serialClock;
     byte dataOut;
-
     long tareValue = 0;
     double factorValue = 1;
 
