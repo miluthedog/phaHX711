@@ -2,7 +2,7 @@ import serial
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-arduino = serial.Serial("COM5", 9600)
+arduino = serial.Serial("COM5", 9600) # adjust COM and baudrate
 x_data, y_data = [], []
 
 def update(_):
