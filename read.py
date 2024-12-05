@@ -1,11 +1,27 @@
 import serial
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 
 arduino = serial.Serial("COM5", 9600)
+x_data, y_data = [], []
 
-while True:
+def update(_):
     try:
-        data = arduino.readline().decode().strip()  # Read and decode
-        number = float(data)  # Convert to a number (float or int)
-        print(f"Number: {number}, Calculated: {number * 2}")  # Example calculation
+        raw_y = float(arduino.readline().decode().strip())
+        y_data.append(raw_y)
+        x_data.append(len(x_data))
+        
+        x_data[:], y_data[:] = x_data[-30:], y_data[-30:]
+        
+        ax.clear()
+        ax.plot(x_data, y_data)
+        ax.set_title("Real-Time Arduino data")
+        ax.set_xlabel("Time")
+        ax.set_ylabel("Value")
+        ax.grid(True)
     except ValueError:
-        print(f"NaN: {data}")
+        pass
+
+fig, ax = plt.subplots()
+ani = FuncAnimation(fig, update, interval=500)
+plt.show()
