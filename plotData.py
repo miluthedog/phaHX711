@@ -3,19 +3,20 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 arduino = serial.Serial("COM5", 9600) # adjust COM and baudrate
-x_data, y_data = [], []
+xData, yData = [], []
+limitData = 30
 
 def update(_):
     try:
-        raw_y = float(arduino.readline().decode().strip())
-        y_data.append(raw_y)
-        x_data.append(len(x_data))
+        readValue = float(arduino.readline().decode().strip())
+        yData.append(readValue)
+        xData.append(len(xData))
         
-        x_data[:], y_data[:] = x_data[-30:], y_data[-30:]
+        xData[:], yData[:] = xData[-limitData:], yData[-limitData:]
         
         ax.clear()
-        ax.plot(x_data, y_data)
-        ax.set_title("Real-Time Arduino data")
+        ax.plot(xData, yData)
+        ax.set_title("Real-time Arduino data")
         ax.set_xlabel("Time")
         ax.set_ylabel("Value")
         ax.grid(True)
