@@ -7,7 +7,7 @@
 - AutoScale: input "ratio"
 - ManualScale: input reference object "weight" and do set up manually
 # Working principles
-### Function: __"weight" = A "signal" + B
+### Function: `"weight" = A "signal" + B`
 - This is a linear function, A and B needed to define the function
 - To obtain A and B, we need 2 reference point, defined by a "weight" and a "signal"
 ### Code breakdown
